@@ -8,8 +8,8 @@ datasource db {
 }
 
 enum InvoiceStatus {
-  PENDING
-  PAID
+  PEDENTE
+  PAGO
 }
 
 model User {
@@ -51,7 +51,7 @@ model Invoice {
 
 model Revenue {
   id String @id @default(uuid())
-  mouth String @unique
+  month String @unique
   revenue Int
 
   @@map("revenues")
