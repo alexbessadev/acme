@@ -1,7 +1,7 @@
 export default function Page() {
   return (
-    <main>
-      <h1>Sistema em contrução.</h1>
+    <main className="h-screen bg-black flex items-center justify-center">
+      <h1 className="text-center text-4xl font-semibold  text-amber-50">Sistema em contrução.</h1>
     </main>
   );
 };
