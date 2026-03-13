@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "InvoiceStatus" AS ENUM ('PENDING', 'PAID');
+CREATE TYPE "InvoiceStatus" AS ENUM ('PEDENTE', 'PAGO');
 
 -- CreateTable
 CREATE TABLE "users" (
@@ -37,7 +37,7 @@ CREATE TABLE "invoices" (
 -- CreateTable
 CREATE TABLE "revenues" (
     "id" TEXT NOT NULL,
-    "mouth" TEXT NOT NULL,
+    "month" TEXT NOT NULL,
     "revenue" INTEGER NOT NULL,
 
     CONSTRAINT "revenues_pkey" PRIMARY KEY ("id")
@@ -53,7 +53,7 @@ CREATE UNIQUE INDEX "customers_email_key" ON "customers"("email");
 CREATE INDEX "invoices_customer_id_idx" ON "invoices"("customer_id");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "revenues_mouth_key" ON "revenues"("mouth");
+CREATE UNIQUE INDEX "revenues_month_key" ON "revenues"("month");
 
 -- AddForeignKey
 ALTER TABLE "invoices" ADD CONSTRAINT "invoices_customer_id_fkey" FOREIGN KEY ("customer_id") REFERENCES "customers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
