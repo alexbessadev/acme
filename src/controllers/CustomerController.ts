@@ -106,7 +106,7 @@ export const CustomerController = {
 
     if (!existing) {
       return {
-        status: 400,
+        status: 404,
         body: buildErrorResponse('Cliente não encontrado.')
       };
     };
