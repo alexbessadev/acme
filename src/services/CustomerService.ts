@@ -43,7 +43,7 @@ export async function findAllCustomers(
   const [customer, total] = await Promise.all([
     prisma.customer.findMany({
       where,
-      orderBy: { [safePage]: order },
+      orderBy: { [safeSortBy]: order },
       take: safeLimit,
       skip
     }),
