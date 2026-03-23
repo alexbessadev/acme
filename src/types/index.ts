@@ -1,4 +1,4 @@
-type SortOrder = 'asc' | 'desc';
+export type SortOrder = 'asc' | 'desc';
 
 export interface User {
   id: string;
