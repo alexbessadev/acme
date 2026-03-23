@@ -17,22 +17,84 @@ async function main() {
       password: password
     }
   });
-  
-  console.log(`Usuário criado: ${ user.email }`);
+
+  console.log(`Usuário criado: ${user.email}`);
 
   const customers_data = [
     {
       name: 'Alex Bessa',
       email: 'alex@email.com',
       imageUrl: 'https://ui-avatars.com/api/?name=Alex+Bessa&background=random'
-    }, {
+    },
+    {
       name: 'Valdiana Bessa',
       email: 'valdiana@email.com',
       imageUrl: 'https://ui-avatars.com/api/?name=Valdiana+Bessa&background=random'
-    }, {
+    },
+    {
       name: 'Timóteo Bessa',
       email: 'timoteo@email.com',
       imageUrl: 'https://ui-avatars.com/api/?name=Timoteo+Bessa&background=random'
+    },
+    {
+      name: 'Carlos Souza',
+      email: 'carlos@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Carlos+Souza&background=random'
+    },
+    {
+      name: 'Fernanda Lima',
+      email: 'fernanda@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Fernanda+Lima&background=random'
+    },
+    {
+      name: 'Rafael Oliveira',
+      email: 'rafael@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Rafael+Oliveira&background=random'
+    },
+    {
+      name: 'Juliana Santos',
+      email: 'juliana@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Juliana+Santos&background=random'
+    },
+    {
+      name: 'Bruno Martins',
+      email: 'bruno@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Bruno+Martins&background=random'
+    },
+    {
+      name: 'Camila Pereira',
+      email: 'camila@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Camila+Pereira&background=random'
+    },
+    {
+      name: 'Diego Almeida',
+      email: 'diego@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Diego+Almeida&background=random'
+    },
+    {
+      name: 'Larissa Costa',
+      email: 'larissa@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Larissa+Costa&background=random'
+    },
+    {
+      name: 'Matheus Ribeiro',
+      email: 'matheus@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Matheus+Ribeiro&background=random'
+    },
+    {
+      name: 'Priscila Nunes',
+      email: 'priscila@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Priscila+Nunes&background=random'
+    },
+    {
+      name: 'Rodrigo Ferreira',
+      email: 'rodrigo@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Rodrigo+Ferreira&background=random'
+    },
+    {
+      name: 'Tatiane Gomes',
+      email: 'tatiane@email.com',
+      imageUrl: 'https://ui-avatars.com/api/?name=Tatiane+Gomes&background=random'
     }
   ];
 
@@ -46,22 +108,22 @@ async function main() {
     });
 
     customers.push(customer);
-    console.log(`Cliente criado: ${ customer.name }`);
+    console.log(`Cliente criado: ${customer.name}`);
   };
 
   const invoicesData = [
     { amount: 15795, status: InvoiceStatus.PEDENTE, date: '2026-10-05', customer: customers[0] },
     { amount: 20348, status: InvoiceStatus.PEDENTE, date: '2026-10-05', customer: customers[1] },
-    { amount: 3040,  status: InvoiceStatus.PAGO,    date: '2026-07-05', customer: customers[0] },
-    { amount: 44800, status: InvoiceStatus.PAGO,    date: '2026-08-05', customer: customers[0] },
+    { amount: 3040, status: InvoiceStatus.PAGO, date: '2026-07-05', customer: customers[0] },
+    { amount: 44800, status: InvoiceStatus.PAGO, date: '2026-08-05', customer: customers[0] },
     { amount: 34577, status: InvoiceStatus.PEDENTE, date: '2026-11-05', customer: customers[2] },
     { amount: 54246, status: InvoiceStatus.PEDENTE, date: '2026-11-05', customer: customers[1] },
-    { amount: 667,   status: InvoiceStatus.PEDENTE, date: '2026-11-05', customer: customers[2] },
-    { amount: 32545, status: InvoiceStatus.PAGO,    date: '2026-06-05', customer: customers[0] },
-    { amount: 1250,  status: InvoiceStatus.PAGO,    date: '2026-05-05', customer: customers[1] },
-    { amount: 8546,  status: InvoiceStatus.PAGO,    date: '06-05-2026', customer: customers[2] },
-    { amount: 500,   status: InvoiceStatus.PAGO,    date: '03-05-2026', customer: customers[0] },
-    { amount: 8945,  status: InvoiceStatus.PAGO,    date: '02-05-2026', customer: customers[1] }
+    { amount: 667, status: InvoiceStatus.PEDENTE, date: '2026-11-05', customer: customers[2] },
+    { amount: 32545, status: InvoiceStatus.PAGO, date: '2026-06-05', customer: customers[0] },
+    { amount: 1250, status: InvoiceStatus.PAGO, date: '2026-05-05', customer: customers[1] },
+    { amount: 8546, status: InvoiceStatus.PAGO, date: '06-05-2026', customer: customers[2] },
+    { amount: 500, status: InvoiceStatus.PAGO, date: '03-05-2026', customer: customers[0] },
+    { amount: 8945, status: InvoiceStatus.PAGO, date: '02-05-2026', customer: customers[1] }
   ];
 
   for (const invoice of invoicesData) {
@@ -114,4 +176,3 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
-  
