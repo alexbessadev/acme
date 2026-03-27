@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "InvoiceStatus" AS ENUM ('PEDENTE', 'PAGO');
+CREATE TYPE "InvoiceStatus" AS ENUM ('PENDENTE', 'PAGO');
 
 -- CreateTable
 CREATE TABLE "users" (
