@@ -32,14 +32,26 @@ export type InvoiceStatus = 'PENDENTE' | 'PAGO';
 
 export interface Invoice {
   id: string;
-  customer_id: string;
+  customerId: string;
   amount: number;
   date: Date;
   status: InvoiceStatus;
+  customer?: {
+    name: string;
+    email: string;
+    imageUrl: string;
+  };
 };
 
-export type CreateInvoiceData = Omit<Invoice, 'id'>;
+export type CreateInvoiceData = Omit<Invoice, 'id' | 'customer'>;
 export type UpdateInvoiceData = Partial<CreateInvoiceData>;
+
+export interface FindAllInvoiceParams {
+  search?: string;
+  page?: number;
+  limit?: number;
+  order?: SortOrder;
+};
 
 export interface Revenue {
   month: string;
