@@ -46,7 +46,7 @@ export const CustomerController = {
 
     const limit = Number(searchParams.get('limit')) || 10;
 
-    const sortBy = searchParams.get('order') ?? 'name';
+    const sortBy = searchParams.get('sortBy') ?? 'name';
 
     const order = (searchParams.get('order') as SortOrder) ?? 'asc';
 
